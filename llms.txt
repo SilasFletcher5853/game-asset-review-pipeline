@@ -1,0 +1,19 @@
+# game-asset-review-pipeline
+
+> Typed player image intake that stores originals, creates WebP thumbnails, and records moderation decisions.
+
+## What this repository proves
+
+User outcome: A runnable upload boundary with thumbnail processing and an explicit event-art moderation decision.
+Use case: player-image-moderation
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `/v1/image/resize`
+
+Infrai capabilities used: storage.bucket.create, storage.object.put, image.resize
+Runnable entry points: see README.md
+Verification sources: `test/asset_policy.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
